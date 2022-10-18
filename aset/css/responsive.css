@@ -1,0 +1,38 @@
+@media (max-width: 740px) {
+    #header{
+        overflow: hidden;
+    }
+    #header #nav {
+        display: block;
+      }
+    #nav li{
+        display: block !important;
+    }
+    
+    #nav li:first-child{
+        display: inline-block !important;
+    }
+
+    #header .search-btn .nav3{
+        display: none;
+    }
+    #nav li a{
+        display: block;
+    }
+    .mobile-menu{
+        display: block;
+    }
+    #nav #nav1{
+        position: initial;
+    }
+
+#nav #nav1{
+        background: #373434cc;
+}
+#nav #nav1 a{
+        color: #fff;
+        padding-left: 41px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+}
+}

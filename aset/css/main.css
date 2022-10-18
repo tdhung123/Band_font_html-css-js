@@ -39,6 +39,7 @@ img.imgslider {
     left: 0;
     height: 46.5px;
     background-color: black;
+    
 }
 #nav li {
     
@@ -92,23 +93,38 @@ img.imgslider {
 #nav .nav2{
     font-size: 11px;
 }
+.mobile-menu{
+    background: #000;
+    color: #fff !important;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+}
+.mobile-menu,
 #header .search-btn .nav3{
     color: #fff;
     line-height: 46.5px;
     padding: 0 23px;
 }
+.mobile-menu,
 #header .search-btn {
     float: right;
     
 }
+
 #header #nav {
     display: inline-block;
+}
+.mobile-menu:hover{
+    background: #ccc;
 }
 #header .search-btn:hover .nav3{
     color: #fff!important;
     background-color: #f44336!important;
     cursor: pointer;
 }
+.mobile-menu i,
 #header .search-btn i{
     display: inline-block;
 }
@@ -139,7 +155,9 @@ img.imgslider {
     margin-top: 25px;
 }
 #content .conten_1{
+
     width: 800px;
+    max-width: 100%;
     padding: 64px 0px;
     margin-left:auto;
     margin-right: auto;

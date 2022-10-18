@@ -5,7 +5,9 @@
         <meta charset="utf-8">
     </header>
     <link rel="stylesheet" href="./aset/css/main.css">
+    <link rel="stylesheet" href="./aset/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
    
     <body>
         <div id="main">
@@ -15,14 +17,14 @@
                     <li><a href="#band">Band</a></li>
                     <li><a href="#Tour">Tour</a></li>
                     <li><a href="#contact">contact</a></li>
-                    <li><a href="">
+                    <li><a href="#">
                         more
-                        <i class="nav2 ti-angle-down fa-light fa-down-to-line"></i>
+                        <i class="nav2 ti-angle-down fa-sharp fa-solid fa-chevron-down"></i>
                     </a>
-                        <ul id="nav1">
-                            <li><a href="">Merchandise</a></li>
-                            <li><a href="">Extras</a></li>
-                            <li><a href="">Media</a></li>
+                        <ul class="nav111" id="nav1">
+                            <li><a href="#">Merchandise</a></li>
+                            <li><a href="#">Extras</a></li>
+                            <li><a href="#">Media</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -30,6 +32,7 @@
                 
                 <i  class="nav3 ti-search fa-sharp fa-solid fa-magnifying-glass"></i>
             </div>
+            <div id="mobile-menu" class="mobile-menu"><i class="fa-solid fa-bars"></i></div>
         </div>
             <div id="slider">
                 <img class="imgslider" src="./aset/img/slider/la.jpg" alt="">
@@ -215,6 +218,38 @@
         modalcontainer.addEventListener("click",function(event){
             event.stopPropagation()
         })
+    </script>
+
+    <script>
+        var header = document.getElementById("header");
+        var mobileMenu =document.getElementById("mobile-menu")
+        var headerHeight = header.clientHeight;
+        // đóng mở mobile menu
+        mobileMenu.onclick = function(){
+            var isClosed =header.clientHeight === headerHeight;
+            if(isClosed){
+                header.style.height = 'auto';
+            } else{
+                header.style.height= null;
+            }
+        }
+        // Tự động đóng khi clik menu
+        var menuItems= document.querySelectorAll('#nav li a[href*="#"]');
+        for (var i = 0; i< menuItems.length; i++){
+            var menuItem =menuItems[i];
+            
+
+            menuItem.onclick = function(){ 
+                 var menu = this.nextElementSibling && this.nextElementSibling.classList.contains('nav111');
+                 if (menu){
+                    event.preventDefault();
+              } else{
+                
+                 header.style.height= null;
+              }
+        }
+
+        }
     </script>
 
 
